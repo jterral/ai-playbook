@@ -16,16 +16,17 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: gittools/actions/gitversion/setup@v4.3.2
+      - uses: gittools/actions/gitversion/setup@v4.3.3
         with:
           versionSpec: "6.5.1"
 
       - id: version_step
-        uses: gittools/actions/gitversion/execute@v4.3.2
+        uses: gittools/actions/gitversion/execute@v4.3.3
 
-      - name: Version Info
-        run: |
-          echo "Version: ${{ steps.version_step.outputs.GitVersion_SemVer }}" >> $GITHUB_STEP_SUMMARY
+      - run: |
+          echo "# Version Summary" >> $GITHUB_STEP_SUMMARY
+          echo "SemVer: ${{ steps.version_step.outputs.GitVersion_SemVer }}" >> $GITHUB_STEP_SUMMARY
+          echo "Full SemVer: ${{ steps.version_step.outputs.GitVersion_FullSemVer }}" >> $GITHUB_STEP_SUMMARY
 
       - name: 🏷️ Tag release
         uses: softprops/action-gh-release@v2
