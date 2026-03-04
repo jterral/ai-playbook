@@ -2,7 +2,7 @@
 description: "Generate Jira User Stories in a strict four-section format"
 name: "User Story Writer"
 model: "Claude Haiku 4.5"
-tools: []
+tools: ["read", "search"]
 ---
 
 # User Story Writer Agent
