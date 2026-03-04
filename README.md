@@ -12,24 +12,20 @@ This repository provides a curated set of custom agents and instructions to enha
 ## 🎯 Features
 
 - **[Auditor Agent](agents/auditor.agent.md)**: An intelligent Copilot agent focused on code quality, security, testing, and architectural practices
+- **[User Story Writer Agent](agents/user-story-writer.agent.md)**: An agent that generates well-structured user stories and acceptance criteria
 - **[Conventional Commits Instructions](instructions/conventional-commits.instructions.md)**: Guidelines for writing standardized commit messages with mandatory scopes
+- **[Pull Request Template Instructions](instructions/pull-request.instructions.md)**: Best practices for creating effective pull request descriptions and templates
 
 ## 📁 Project Structure
 
 ```txt
 my-awesome-copilot/
-├── .github/
-│   ├── workflows/
-│   │   └── release.yml              # Automated release workflow
-│   └── instructions/                # Shared instruction files
+├── ...
 ├── agents/                          # Custom Copilot agents
-│   └── auditor.agent.md             # Code review & quality agent
+│   └── *.agent.md                   # Agent definitions
 ├── instructions/                    # Custom Copilot instructions
-│   └── conventional-commits.instructions.md  # Commit guidelines
-├── .devcontainer/                   # Dev container configuration
-├── .mise-tasks/                     # Development tasks
-├── mise.toml                        # Tool and task definitions
-└── LICENSE                          # MIT License
+│   └── *.instructions.md            # Instruction definitions
+└── ...
 ```
 
 ## 🤝 Contributing

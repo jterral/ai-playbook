@@ -1,11 +1,11 @@
 ---
-description: 'Pull request instructions for this repository'
-applyTo: '**'
+description: "Pull request instructions for this repository"
+applyTo: "**"
 ---
 
 # Pull request instructions
 
-These instructions define how to fill out the pull request template file at [pull_request_template.md](.github/pull_request_template.md).
+These instructions define how to fill out the pull request template file at [PULL_REQUEST_TEMPLATE.md](.github/PULL_REQUEST_TEMPLATE.md).
 
 ## Required description
 

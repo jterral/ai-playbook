@@ -20,8 +20,8 @@ jobs:
         with:
           versionSpec: "6.5.1"
 
-      - id: version_step
-        uses: gittools/actions/gitversion/execute@v4.3.3
+      - uses: gittools/actions/gitversion/execute@v4.3.3
+        id: version_step
 
       - run: |
           echo "## :label: Release Version" >> $GITHUB_STEP_SUMMARY
