@@ -1,5 +1,6 @@
 ---
 description: "Instructions for writing pull request titles following the Conventional Commits specification."
+applyTo: '**'
 ---
 
 # Pull Request Titles
