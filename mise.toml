@@ -1,13 +1,11 @@
 [env]
-PROJECT_NAME = "my-awesome-copilot"
-
-[settings]
-experimental = true
+PROJECT_NAME = "copilot-playbook"
 
 [tools]
-gitversion = { version = "6.5.1" }
-pre-commit = { version = "4.5" }
-python = { version = "3.14" }
+gh = "2.89.0"
+gitversion = "6.5.1"
+pre-commit = "4.5"
+python = "3.14"
 
 [task_config]
 includes = [
