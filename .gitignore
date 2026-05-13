@@ -1,2 +1,2 @@
-# Ignore the mise-shared-tasks directory
-.mise-shared-tasks/
+# APM dependencies
+apm_modules/
