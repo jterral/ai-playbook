@@ -14,7 +14,7 @@ This repository provides a curated set of custom agents and instructions to enha
 - **[Auditor Agent](./agents/auditor.agent.md)**: An intelligent Copilot agent focused on code quality, security, testing, and architectural practices
 - **[User Story Writer Agent](./agents/user-story-writer.agent.md)**: An agent that generates well-structured user stories and acceptance criteria
 - **[Git Conventional Commits Instructions](./instructions/git-conventional-commit.instructions.md)**: Guidelines for writing standardized commit messages with mandatory scopes
-- **[Git Pull Request Instructions](./instructions/git-pull-request.instructions.md)**: Best practices for creating effective pull request descriptions and templates
+- **[Git Pull Request Instructions](./instructions/git-pull-request.instructions.md)**: Best practices for writing standardized pull request titles, including Conventional Commit formatting and JIRA key usage
 
 ## 📁 Project Structure
 
