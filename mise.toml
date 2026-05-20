@@ -2,32 +2,12 @@
 PROJECT_NAME = "copilot-playbook"
 
 [tools]
-gh = "2.89.0"
-gitversion = "6.5.1"
-pre-commit = "4.5"
+gh = "2.92.0"
+gitversion = "6.7"
 python = "3.14"
+"pipx:pre-commit" = "4.6"
 
 [task_config]
 includes = [
   "git::ssh://git@github.com/jterral/my-mise-tasks.git//tasks/precommit?ref=v2",
 ]
-
-[tasks.info]
-description = "Print project information"
-quiet = true
-run = '''
-echo ""
-echo "──────────────────────────────────────────────"
-echo "  📦 Project information"
-echo "──────────────────────────────────────────────"
-echo ""
-echo "  Project           : $PROJECT_NAME"
-echo "  Package version   : $PACKAGE_VERSION"
-echo ""
-echo "  Tooling"
-echo "  ───────"
-echo "  gitversion        : $(gitversion -version)"
-echo "  python            : $(python --version | awk '{print $2}')"
-echo "  pre-commit        : $(pre-commit --version | awk '{print $2}')"
-echo ""
-'''
