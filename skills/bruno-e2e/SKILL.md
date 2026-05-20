@@ -17,7 +17,7 @@ tools: [bash]
 1. List available environments from `.bruno/environments/`
 2. Ask the user which environment to use
 3. List available requests from `.bruno/` recursively
-4. Ask: "Run all requests or a specific one?" 
+4. Ask: "Run all requests or a specific one?"
    - If specific, show the list and ask which one
-5. Run `bru run {target} --env {environment} --env-global BETCLIC`
+5. Run `bru run {target} --env {environment} --env-global {global-env}`
 6. Report passed/failed requests with details on failures
