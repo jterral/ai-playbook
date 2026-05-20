@@ -18,10 +18,9 @@ practices, so teams can leverage Copilot consistently across projects.
 
 ## Content Architecture
 
-- **Agents** live under `agents/` and are named with `.agent.md` suffix.
-- **Instructions** live under `instructions/` and are named with `.instructions.md` suffix.
-- **Skills** live under `.github/skills/` and are structured with a `SKILL.md` file.
-- Each instruction or agent should focus on a single domain or practice.
+- **Skills** live under `skills/` — each in its own directory with a `SKILL.md` file. This is the primary and authoritative location for all capabilities.
+- **Base instructions** live under `.github/instructions/` — pulled from APM dependencies (do not edit directly).
+- Each skill should focus on a single domain or practice.
 - Keep guidance independent and reusable across different projects.
 
 ## Code Review Standards
@@ -56,8 +55,8 @@ and contributor-facing comments.
 
 - Follow conventional commits with mandatory scopes.
 - Follow the pull request template rules.
-- See [Conventional commits](instructions/conventional-commits.instructions.md).
-- See [Pull request template rules](instructions/pull-request.instructions.md).
+- See [Conventional commits](../skills/git-conventional-commit/SKILL.md).
+- See [Pull request template rules](../skills/git-pull-request/SKILL.md).
 
 ## What Not To Do
 
