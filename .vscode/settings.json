@@ -1,9 +1,3 @@
 {
-  "editor.formatOnSave": true,
-  "github.copilot.chat.commitMessageGeneration.instructions": [
-    {
-      "file": ".github/instructions/conventional-commits.instructions.md"
-    }
-  ],
-  "githubPullRequests.pullRequestDescription": "Copilot",
+  "editor.formatOnSave": true
 }
