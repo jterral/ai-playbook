@@ -21,11 +21,15 @@ Given a Jira ticket ID $ARGUMENTS:
    - Retrieve: summary, description, acceptance criteria, issue type (Story/Bug/Task)
 
 2. **Create the git branch**
-   - Type: `feat` (Story), `fix` (Bug), `chore` (Task)
+   - Format: `{type}/{ticket-id}_{slug}`
+   - Types:
+     - `feature` — new functionality (default if unknown)
+     - `fix` — bug fix
+     - `chore` — maintenance, dependencies, config
+     - `docs` — documentation only
    - Slug: kebab-case from summary, max 5 words
-   - Format: `{type}/{ticket-id}-{slug}`
-   - Example: `feat/PROJ-123-add-user-authentication`
-   - Run `git checkout -b {branchname}`
+   - Example: `feature/PROJ-123_add-user-authentication`
+   - Run `git switch -c {branchname}`
 
 3. **Generate a development plan**
    - Analyze the existing codebase to identify impacted files/modules

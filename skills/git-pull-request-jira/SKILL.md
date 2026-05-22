@@ -1,6 +1,6 @@
 ---
-name: git-pull-request-work
-description: PR title and description format for work projects — uses JIRA ticket key as scope.
+name: git-pull-request-jira
+description: PR title and description format for JIRA projects — uses JIRA ticket key as scope.
 user-invocable: true
 tools: [git, github]
 ---
