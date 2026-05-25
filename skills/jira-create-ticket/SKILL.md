@@ -26,11 +26,11 @@ When the user asks to create the ticket in Jira (not just generate the content),
 ### Sprint
 
 - Search for the active sprint using JQL: `project = {PROJECT_KEY} AND sprint in openSprints()` (fetch 1 result, read the `customfield_10020` field).
-- Use the sprint `id` from the result to set the sprint on the new issue via `additional_fields`: `{"customfield_10020": {"id": <sprint_id>}}`.
+- Use the sprint `id` from the result to set the sprint on the new issue via `additional_fields`: `{"customfield_10020": <sprint_id>}`.
 
 ### Component (repository name)
 
-- Determine the current repository name from the working directory (e.g., the folder name under `src/`).
+- Determine the current repository name from the working directory (e.g., the folder name).
 - Before creating the ticket, fetch the project's issue type metadata (`getJiraIssueTypeMetaWithFields`) and check if a component with that exact repository name exists in `allowedValues`.
 - If it exists, set it via `additional_fields`: `{"components": [{"name": "<repo-name>"}]}`.
 - **Never create a new component.** If the repo name is not in the allowed list, skip the component field silently.
@@ -94,6 +94,20 @@ Before answering, ensure the output meets **all** rules. If any rule cannot be s
 - No repetition of instructions.
 - No emojis outside section titles.
 - No Markdown formatting other than the section titles and bullet lists.
+
+---
+
+## Post-Creation Output
+
+After successfully creating the ticket in Jira, **always** display the clickable link to the user in this format:
+
+```
+https://{site}.atlassian.net/browse/{ISSUE_KEY}
+```
+
+For example: `https://mycompany.atlassian.net/browse/XXXX-1234`
+
+Never omit this link — it is the primary output the user needs after ticket creation.
 
 ---
 
