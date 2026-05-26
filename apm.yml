@@ -1,7 +1,6 @@
 name: copilot-playbook
 version: 1.0.0
-targets:
-  - copilot
+target:
   - claude
 dependencies:
   apm:
