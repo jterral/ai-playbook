@@ -1,9 +1,11 @@
 ---
 name: jira-plan-feature
-description: Plan development tasks for C# projects based on Jira tickets.
+description: Plan development tasks based on Jira tickets.
 user-invocable: true
 tools: [bash, jira-mcp]
 ---
+
+# Plan Feature from Jira Ticket
 
 ## Prerequisites
 
@@ -15,28 +17,23 @@ tools: [bash, jira-mcp]
 
 ## Steps
 
-Given a Jira ticket ID $ARGUMENTS:
+Given a Jira ticket ID:
 
 1. **Fetch the ticket** via Jira MCP
    - Retrieve: summary, description, acceptance criteria, issue type (Story/Bug/Task)
 
 2. **Create the git branch**
-   - Format: `{type}/{ticket-id}_{slug}`
-   - Types:
-     - `feature` — new functionality (default if unknown)
-     - `fix` — bug fix
-     - `chore` — maintenance, dependencies, config
-     - `docs` — documentation only
-   - Slug: kebab-case from summary, max 5 words
-   - Example: `feature/PROJ-123_add-user-authentication`
-   - Run `git switch -c {branchname}`
+   - Use the `git-branch-naming-jira` skill conventions
+   - Run `git pull` to ensure the local repository is up to date
+   - Run `git switch -c {branchname}` from the master/main branch
 
 3. **Generate a development plan**
    - Analyze the existing codebase to identify impacted files/modules
    - List implementation steps in logical order
    - Flag any concerns: breaking changes, migrations, tests to write
 
-4. **Final summary**
-   - Display the created branch name
-   - Display the plan as a checklist
-   - Ask: "Where do you want to start?"
+4. **Execute the plan**
+   - Implement all changes
+   - Build and run tests to verify
+   - Commit using the `git-conventional-commit` skill conventions
+   - Create the PR using the `git-pull-request-jira` skill conventions
