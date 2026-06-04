@@ -11,8 +11,6 @@ Format: `{type}/{ticket-id}_{slug}`
 
 - `feature` — new functionality (default if unknown)
 - `fix` — bug fix
-- `chore` — maintenance, dependencies, config
-- `docs` — documentation only
 
 ## Rules
 
