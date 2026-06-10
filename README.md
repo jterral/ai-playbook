@@ -1,17 +1,18 @@
 # Copilot Playbook
 
-A comprehensive collection of custom agents and instructions for GitHub Copilot, including development best practices, quality standards, and automation tooling.
+A comprehensive collection of reusable agent skills for GitHub Copilot and Claude Code, including development best practices, quality standards, and automation tooling.
 
 ## 📋 Overview
 
-This repository provides a curated set of custom agents and instructions to enhance GitHub Copilot's capabilities with:
+This repository provides a curated set of skills, consumable two ways:
 
-- **Custom Agents**: Intelligent coding assistants tailored for specific development tasks
-- **Custom Instructions**: Detailed guidelines for code quality, security, testing, and conventions
+- **Claude Code plugins**: five plugins (git-workflow, code-auditor, bruno, dotnet, flutter) served from this repo's own marketplace
+- **APM packages**: each skill can be pulled individually via [APM (Agent Package Manager)](https://github.com/github/awesome-copilot)
 
 ## 🎯 Features
 
 - **[Auditor](./skills/auditor/SKILL.md)**: A demanding code review skill focused on code quality, security, testing, and architectural practices
+- **[Git Branch Naming](./skills/git-branch-naming/SKILL.md)**: Branch naming convention (`{type}/{slug}`)
 - **[Git Conventional Commits](./skills/git-conventional-commit/SKILL.md)**: Guidelines for writing standardized commit messages with mandatory scopes
 - **[Git Pull Request Formatting](./skills/git-pull-request-formatting/SKILL.md)**: Standardized pull request titles and descriptions with functional scope
 - **[Bruno e2e](./skills/bruno-e2e/SKILL.md)** / **[Bruno Generator](./skills/bruno-generator/SKILL.md)**: Run Bruno API tests and generate `.bru` request files
@@ -43,13 +44,13 @@ This repository is a [Claude Code plugin marketplace](https://docs.claude.com/en
 /plugin install flutter@copilot-playbook
 ```
 
-| Plugin           | Skills                                                       |
-| ---------------- | ------------------------------------------------------------ |
+| Plugin           | Skills                                                                  |
+| ---------------- | ----------------------------------------------------------------------- |
 | **git-workflow** | git-branch-naming, git-conventional-commit, git-pull-request-formatting |
-| **code-auditor** | auditor                                                      |
-| **bruno**        | bruno-e2e, bruno-generator                                   |
-| **dotnet**       | csharp-conventions, dotnet-check                             |
-| **flutter**      | flutter-architecture, flutter-orient-ui, flutter-style       |
+| **code-auditor** | auditor                                                                 |
+| **bruno**        | bruno-e2e, bruno-generator                                              |
+| **dotnet**       | csharp-conventions, dotnet-check                                        |
+| **flutter**      | flutter-architecture, flutter-orient-ui, flutter-style                  |
 
 Once installed, skills are namespaced by plugin (e.g. `git-workflow:git-conventional-commit`, `code-auditor:auditor`).
 
@@ -88,4 +89,4 @@ See [LICENSE](LICENSE) file for full details.
 
 ---
 
-**Last Updated:** May 2026
+**Last Updated:** June 2026
