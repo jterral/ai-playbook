@@ -79,7 +79,7 @@
       "strict": false,
       "skills": [
         "./skills/git-branch-naming",
-        "./skills/git-conventional-commits",
+        "./skills/git-conventional-commit",
         "./skills/git-pull-request-formatting"
       ],
       "keywords": [

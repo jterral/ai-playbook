@@ -1,6 +1,6 @@
 ---
 name: git-pull-request-formatting
-description: PR title and description format.
+description: PR title and description format using Conventional Commit types and functional scope. Use when creating or editing a GitHub pull request.
 ---
 
 ## Prerequisites

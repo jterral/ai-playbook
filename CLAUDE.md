@@ -19,10 +19,10 @@ copilot-playbook/
 │   ├── flutter-style/SKILL.md
 │   ├── git-branch-naming/SKILL.md
 │   ├── git-conventional-commit/SKILL.md
-│   └── git-pull-request/SKILL.md
+│   └── git-pull-request-formatting/SKILL.md
 │
 ├── .claude-plugin/
-│   └── marketplace.json            # Marketplace manifest (repo is its own marketplace)
+│   └── marketplace.json            # Claude Code marketplace (5 plugins defined inline)
 │
 ├── .github/
 │   └── workflows/                  # CI/CD pipelines
@@ -64,7 +64,21 @@ description: Brief description of what the skill does and when to use it
 | **flutter-style**           | Flutter styling for Apple compliance (auto)   | Conventions     |
 | **git-branch-naming**       | Git branch naming convention (auto)           | Documentation   |
 | **git-conventional-commit** | Conventional Commits format guide             | Documentation   |
-| **git-pull-request**        | PR format for personal projects (scope)       | Documentation   |
+| **git-pull-request-formatting** | PR title and description format           | Documentation   |
+
+### Claude Code Marketplace Plugins
+
+Skills are grouped into five plugins defined inline in `.claude-plugin/marketplace.json` (`source: "./"` with explicit `skills` paths — no per-plugin `plugin.json` needed):
+
+| Plugin           | Skills                                                                   |
+| ---------------- | ------------------------------------------------------------------------ |
+| **bruno**        | bruno-e2e, bruno-generator                                               |
+| **code-auditor** | auditor                                                                  |
+| **dotnet**       | csharp-conventions, dotnet-check                                         |
+| **flutter**      | flutter-architecture, flutter-orient-ui, flutter-style                   |
+| **git-workflow** | git-branch-naming, git-conventional-commit, git-pull-request-formatting  |
+
+When adding or renaming a skill directory, update the matching `skills` paths in `marketplace.json` — `claude plugin validate` does not check that these paths exist.
 
 ### Conventions
 
@@ -78,7 +92,7 @@ All skill content must be in English. Non-English text is not permitted.
   - File: `skills/git-conventional-commit/SKILL.md`
   - Why: Helps group related changes by domain
 - **Pull Requests**: Use functional `scope` (e.g., `feat(auth): add login`)
-  - File: `skills/git-pull-request/SKILL.md`
+  - File: `skills/git-pull-request-formatting/SKILL.md`
   - Why: Helps group related changes by domain
 
 Both patterns are valid; use the appropriate one based on context.

@@ -1,6 +1,6 @@
 ---
 name: bruno-e2e
-description: Run Bruno e2e tests interactively
+description: Run Bruno API e2e tests interactively with the bru CLI. Use when the user wants to run API tests, a Bruno collection, or .bru request files.
 ---
 
 ## Prerequisites
