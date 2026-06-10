@@ -1,8 +1,6 @@
 ---
 name: dotnet-check
 description: Build the project and run unit tests
-user-invocable: true
-tools: [bash]
 ---
 
 ## Prerequisites

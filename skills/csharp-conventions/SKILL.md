@@ -1,8 +1,6 @@
 ---
 name: csharp-conventions
 description: C# and .NET coding conventions. Use automatically when working on C# or .NET code, implementing features, adding dependencies, reviewing existing C# code, or writing tests in a C# project.
-user-invocable: false
-tools: [read, write]
 ---
 
 # C# Conventions

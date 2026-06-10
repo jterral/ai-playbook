@@ -1,8 +1,6 @@
 ---
 name: flutter-style
 description: "Flutter UI styling guidelines to avoid Apple App Store rejections for looking too much like Android/Material. Use automatically when creating, modifying, or styling Flutter widgets. Defines which Material widgets to replace, which to customize, and how to avoid unnecessary rewrites with GestureDetector."
-user-invocable: false
-tools: [read, write, edit]
 ---
 
 # Flutter Style — Apple Compliance

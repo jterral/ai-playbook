@@ -1,8 +1,6 @@
 ---
 name: bruno-e2e
 description: Run Bruno e2e tests interactively
-user-invocable: true
-tools: [bash]
 ---
 
 ## Prerequisites
@@ -19,5 +17,5 @@ tools: [bash]
 3. List available requests from `.bruno/` recursively
 4. Ask: "Run all requests or a specific one?"
    - If specific, show the list and ask which one
-5. Run `bru run {target} --env {environment} --env-global {global-env}`
+5. Run `bru run {target} --env {environment}`
 6. Report passed/failed requests with details on failures

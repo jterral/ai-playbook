@@ -17,5 +17,5 @@ Format: `{type}/{slug}`
 ## Rules
 
 - Default to `feature` if the type cannot be determined
-- Slug in kebab-case from the ticket summary, max 5 words
+- Slug in kebab-case from the change summary, max 5 words
 - Example: `feature/get-user-address`

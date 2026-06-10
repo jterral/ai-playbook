@@ -1,8 +1,6 @@
 ---
 name: auditor
-description: Demanding yet constructive code review agent focused on quality, security, tests, and design tradeoffs.
-user-invocable: true
-tools: [read, search, edit]
+description: Demanding yet constructive code review agent focused on quality, security, tests, and design tradeoffs. Use when the user asks for a demanding audit, in-depth review, or critical challenge of code, a module, or a change.
 ---
 
 # Code Auditor Skill

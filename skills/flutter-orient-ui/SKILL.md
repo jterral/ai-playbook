@@ -1,8 +1,6 @@
 ---
 name: flutter-orient-ui
 description: "Guidelines for using Orient UI components in Flutter. Use automatically when creating or modifying Flutter widgets (buttons, navigation, toasts, popups, toggles, search fields, cards, tiles). Orient UI components are copied from GitHub templates, never imported as a package."
-user-invocable: false
-tools: [bash, read, write, edit]
 ---
 
 # Flutter Orient UI
