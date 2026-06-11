@@ -1,8 +1,6 @@
 ---
 name: dotnet-check
-description: Build the project and run unit tests
-user-invocable: true
-tools: [bash]
+description: Build a C#/.NET project and run its unit tests. Use when the user asks to build, check, or verify a .NET solution or run dotnet tests.
 ---
 
 ## Prerequisites

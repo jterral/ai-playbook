@@ -1,8 +1,6 @@
 ---
 name: git-conventional-commit
 description: Instructions for writing commit messages following the Conventional Commits specification.
-user-invocable: true
-tools: [git]
 ---
 
 ## Prerequisites

@@ -1,8 +1,6 @@
 ---
 name: flutter-architecture
 description: "Flutter project architecture rules. Use automatically when creating or modifying Dart files, screens, widgets, providers, or repositories. Enforces feature-first structure, widget extraction, Riverpod without code generation, and file placement conventions."
-user-invocable: false
-tools: [read, write, edit]
 ---
 
 # Flutter Architecture

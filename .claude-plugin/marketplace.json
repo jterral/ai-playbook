@@ -1,0 +1,93 @@
+{
+  "name": "copilot-playbook",
+  "owner": {
+    "name": "jterral"
+  },
+  "metadata": {
+    "description": "Personal marketplace of skills for code review, git workflows, Bruno API testing, .NET and Flutter development",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "bruno",
+      "description": "Bruno API testing skills: run e2e collections interactively and generate .bru request files from ASP.NET Core endpoints",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/bruno-e2e",
+        "./skills/bruno-generator"
+      ],
+      "keywords": [
+        "bruno",
+        "api",
+        "testing",
+        "e2e"
+      ]
+    },
+    {
+      "name": "code-auditor",
+      "description": "Demanding yet constructive code review skill focused on quality, security, tests, and design tradeoffs",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/auditor"
+      ],
+      "keywords": [
+        "code-review",
+        "audit",
+        "quality",
+        "security"
+      ]
+    },
+    {
+      "name": "dotnet",
+      "description": ".NET development skills: C# coding conventions and build/test verification",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/csharp-conventions",
+        "./skills/dotnet-check"
+      ],
+      "keywords": [
+        "dotnet",
+        "csharp",
+        "conventions",
+        "testing"
+      ]
+    },
+    {
+      "name": "flutter",
+      "description": "Flutter development skills: feature-first architecture, Apple-compliant styling, and Orient UI component usage",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/flutter-architecture",
+        "./skills/flutter-orient-ui",
+        "./skills/flutter-style"
+      ],
+      "keywords": [
+        "flutter",
+        "dart",
+        "architecture",
+        "ui"
+      ]
+    },
+    {
+      "name": "git-workflow",
+      "description": "Git workflow skills: branch naming, Conventional Commits, and pull request formatting",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/git-branch-naming",
+        "./skills/git-conventional-commit",
+        "./skills/git-pull-request-formatting"
+      ],
+      "keywords": [
+        "git",
+        "commits",
+        "pull-request",
+        "conventions"
+      ]
+    }
+  ]
+}

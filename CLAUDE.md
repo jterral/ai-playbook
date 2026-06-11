@@ -6,20 +6,25 @@ The **Copilot Playbook** is a centralized collection of custom agents, instructi
 
 ## Directory Structure
 
-```
+```txt
 copilot-playbook/
 ├── skills/                         # Primary skill definitions
-│   ├── auditor/SKILL.md            # Code quality review agent
-│   ├── bruno-e2e/SKILL.md          # Run Bruno e2e tests
-│   ├── bruno-generator/SKILL.md    # Generate Bruno API test files
-│   ├── dotnet-check/SKILL.md       # Build & run unit tests
+│   ├── auditor/SKILL.md
+│   ├── bruno-e2e/SKILL.md
+│   ├── bruno-generator/SKILL.md
+│   ├── csharp-conventions/SKILL.md
+│   ├── dotnet-check/SKILL.md
+│   ├── flutter-architecture/SKILL.md
+│   ├── flutter-orient-ui/SKILL.md
+│   ├── flutter-style/SKILL.md
+│   ├── git-branch-naming/SKILL.md
 │   ├── git-conventional-commit/SKILL.md
-│   ├── git-pull-request/SKILL.md
-│   └── jira-create-ticket/SKILL.md
+│   └── git-pull-request-formatting/SKILL.md
+│
+├── .claude-plugin/
+│   └── marketplace.json            # Claude Code marketplace (5 plugins defined inline)
 │
 ├── .github/
-│   ├── copilot-instructions.md     # Repository governance & guidelines
-│   ├── instructions/               # Base instructions (from APM)
 │   └── workflows/                  # CI/CD pipelines
 │
 ├── apm.yml                         # Agent Package Manager dependencies
@@ -40,26 +45,40 @@ A skill is a reusable, self-contained capability that can be invoked from Claude
 ```yaml
 ---
 name: skill-identifier
-description: Brief description of what the skill does
-user-invocable: true # Can be invoked from Claude Code
-tools: [tool1, tool2] # Optional: tools this skill uses
+description: Brief description of what the skill does and when to use it
 ---
 # Step-by-step instructions or guidelines here
 ```
 
 ### Available Skills
 
-| Skill                       | Purpose                                    | Category           |
-| --------------------------- | ------------------------------------------ | ------------------ |
-| **auditor**                 | Automated code review & quality assessment | Quality Review     |
-| **bruno-e2e**               | Run Bruno API tests interactively          | Testing            |
-| **bruno-generator**         | Generate Bruno .bru test files             | Code Generation    |
-| **dotnet-check**            | Build C# project & run unit tests          | Build/Test         |
-| **git-conventional-commit** | Conventional Commits format guide          | Documentation      |
-| **git-pull-request**        | PR format for personal projects (scope)    | Documentation      |
-| **git-pull-request-work**   | PR format for work projects (JIRA key)     | Documentation      |
-| **jira-create-ticket**      | Generate Jira User Stories                 | Content Generation |
-| **jira-plan-feature**       | Plan development tasks from Jira tickets   | Project Management |
+| Skill                       | Purpose                                       | Category        |
+| --------------------------- | --------------------------------------------- | --------------- |
+| **auditor**                 | Automated code review & quality assessment    | Quality Review  |
+| **bruno-e2e**               | Run Bruno API tests interactively             | Testing         |
+| **bruno-generator**         | Generate Bruno .bru test files                | Code Generation |
+| **csharp-conventions**      | C# and .NET coding conventions (auto)         | Conventions     |
+| **dotnet-check**            | Build C# project & run unit tests             | Build/Test      |
+| **flutter-architecture**    | Flutter feature-first architecture (auto)     | Conventions     |
+| **flutter-orient-ui**       | Orient UI component usage in Flutter (auto)   | Conventions     |
+| **flutter-style**           | Flutter styling for Apple compliance (auto)   | Conventions     |
+| **git-branch-naming**       | Git branch naming convention (auto)           | Documentation   |
+| **git-conventional-commit** | Conventional Commits format guide             | Documentation   |
+| **git-pull-request-formatting** | PR title and description format           | Documentation   |
+
+### Claude Code Marketplace Plugins
+
+Skills are grouped into five plugins defined inline in `.claude-plugin/marketplace.json` (`source: "./"` with explicit `skills` paths — no per-plugin `plugin.json` needed):
+
+| Plugin           | Skills                                                                   |
+| ---------------- | ------------------------------------------------------------------------ |
+| **bruno**        | bruno-e2e, bruno-generator                                               |
+| **code-auditor** | auditor                                                                  |
+| **dotnet**       | csharp-conventions, dotnet-check                                         |
+| **flutter**      | flutter-architecture, flutter-orient-ui, flutter-style                   |
+| **git-workflow** | git-branch-naming, git-conventional-commit, git-pull-request-formatting  |
+
+When adding or renaming a skill directory, update the matching `skills` paths in `marketplace.json` — `claude plugin validate` does not check that these paths exist.
 
 ### Conventions
 
@@ -73,7 +92,7 @@ All skill content must be in English. Non-English text is not permitted.
   - File: `skills/git-conventional-commit/SKILL.md`
   - Why: Helps group related changes by domain
 - **Pull Requests**: Use functional `scope` (e.g., `feat(auth): add login`)
-  - File: `skills/git-pull-request/SKILL.md`
+  - File: `skills/git-pull-request-formatting/SKILL.md`
   - Why: Helps group related changes by domain
 
 Both patterns are valid; use the appropriate one based on context.
@@ -97,9 +116,7 @@ Each skill should document:
 ```yaml
 ---
 name: skill-name
-description: One-line description of the skill's purpose
-user-invocable: true
-tools: []  # List any tools this skill uses
+description: One-line description of the skill's purpose and when to use it
 ---
 
 ## Overview
@@ -116,9 +133,9 @@ Brief explanation of what the skill does and when to use it.
 ...
 ```
 
-4. Ensure content is English-only
-5. Test the skill in Claude Code
-6. Create a PR with your new skill
+1. Ensure content is English-only
+2. Test the skill in Claude Code
+3. Create a PR with your new skill
 
 ### Updating Dependencies
 
@@ -165,19 +182,18 @@ GitHub Actions workflows in `.github/workflows/`:
 All `SKILL.md` files must include:
 
 - `name` — Kebab-case identifier matching directory name
-- `description` — Concise one-line description
-- `user-invocable` — Boolean (true for user-facing skills)
+- `description` — Concise one-line description stating what the skill does and when to use it
 
 Optional fields:
 
-- `tools` — Array of tool names used by the skill
-- `category` — Semantic category (e.g., "Testing", "Git", "Jira")
+- `license` — Reference to license terms or SPDX identifier
+- `allowed-tools` — Restrict which tools are available while the skill is active (use sparingly)
 
 ### Pre-publication Checklist
 
 - [ ] Content is English-only (no non-English text)
 - [ ] File is named `SKILL.md` (not `README.md`)
-- [ ] Frontmatter includes: `name`, `description`, `user-invocable`
+- [ ] Frontmatter includes: `name`, `description`
 - [ ] `name` matches directory name (kebab-case)
 - [ ] Prerequisites section included (if applicable)
 - [ ] Steps are numbered and clear
@@ -201,9 +217,9 @@ This playbook undergoes regular reviews to:
 
 **Skill not appearing in Claude Code?**
 
-- Ensure `user-invocable: true` in frontmatter
-- Check skill `name` is correct (kebab-case)
+- Check skill `name` is correct (kebab-case) and matches the directory name
 - Verify file is at `skills/{name}/SKILL.md`
+- Ensure the `description` states when to use the skill (it drives automatic activation)
 
 **Duplicate files between `skills/` and `instructions/`?**
 
@@ -216,4 +232,3 @@ This playbook undergoes regular reviews to:
 - [Conventional Commits](https://www.conventionalcommits.org/)
 - [GitHub Copilot Documentation](https://docs.github.com/en/copilot)
 - [APM (Agent Package Manager)](https://github.com/github/awesome-copilot)
-- [Repository Governance](../.github/copilot-instructions.md)

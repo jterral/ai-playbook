@@ -2,10 +2,10 @@
 PROJECT_NAME = "copilot-playbook"
 
 [tools]
-gh = "2.92.0"
+gh = "2.93"
 gitversion = "6.7"
-python = "3.14"
 "pipx:pre-commit" = "4.6"
+uv = "0.11"
 
 [task_config]
 includes = [
