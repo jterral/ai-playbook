@@ -8,8 +8,17 @@ The **Copilot Playbook** is a centralized collection of custom agents, instructi
 
 ```txt
 copilot-playbook/
-├── skills/                         # Primary skill definitions
-│   ├── auditor/SKILL.md
+├── plugins/                        # Full plugins (commands + agents + skills)
+│   └── code-auditor/
+│       ├── .claude-plugin/plugin.json
+│       ├── commands/audit.md       # /audit [pr|full]
+│       ├── agents/auditor.md       # autonomous read-only audit agent
+│       └── skills/
+│           ├── audit-architecture/SKILL.md
+│           ├── audit-security/SKILL.md
+│           └── audit-quality/SKILL.md
+│
+├── skills/                         # Standalone skill definitions
 │   ├── bruno-e2e/SKILL.md
 │   ├── bruno-generator/SKILL.md
 │   ├── csharp-conventions/SKILL.md
@@ -54,7 +63,9 @@ description: Brief description of what the skill does and when to use it
 
 | Skill                       | Purpose                                       | Category        |
 | --------------------------- | --------------------------------------------- | --------------- |
-| **auditor**                 | Automated code review & quality assessment    | Quality Review  |
+| **audit-architecture**      | Tech-agnostic Clean Architecture audit        | Quality Review  |
+| **audit-security**          | Secret leak & vulnerability detection         | Quality Review  |
+| **audit-quality**           | Demanding code quality audit                  | Quality Review  |
 | **bruno-e2e**               | Run Bruno API tests interactively             | Testing         |
 | **bruno-generator**         | Generate Bruno .bru test files                | Code Generation |
 | **csharp-conventions**      | C# and .NET coding conventions (auto)         | Conventions     |
@@ -68,15 +79,15 @@ description: Brief description of what the skill does and when to use it
 
 ### Claude Code Marketplace Plugins
 
-Skills are grouped into five plugins defined inline in `.claude-plugin/marketplace.json` (`source: "./"` with explicit `skills` paths — no per-plugin `plugin.json` needed):
+Five plugins are declared in `.claude-plugin/marketplace.json`. Four are defined inline (`source: "./"` with explicit `skills` paths — no per-plugin `plugin.json` needed); `code-auditor` is a full plugin directory (`source: "./plugins/code-auditor"` with its own `plugin.json`, command, agent, and skills auto-discovered by convention):
 
-| Plugin           | Skills                                                                   |
-| ---------------- | ------------------------------------------------------------------------ |
-| **bruno**        | bruno-e2e, bruno-generator                                               |
-| **code-auditor** | auditor                                                                  |
-| **dotnet**       | csharp-conventions, dotnet-check                                         |
-| **flutter**      | flutter-architecture, flutter-orient-ui, flutter-style                   |
-| **git-workflow** | git-branch-naming, git-conventional-commit, git-pull-request-formatting  |
+| Plugin           | Contents                                                                                 |
+| ---------------- | ---------------------------------------------------------------------------------------- |
+| **bruno**        | bruno-e2e, bruno-generator                                                               |
+| **code-auditor** | `/audit` command, `auditor` agent, audit-architecture, audit-security, audit-quality     |
+| **dotnet**       | csharp-conventions, dotnet-check                                                         |
+| **flutter**      | flutter-architecture, flutter-orient-ui, flutter-style                                   |
+| **git-workflow** | git-branch-naming, git-conventional-commit, git-pull-request-formatting                  |
 
 When adding or renaming a skill directory, update the matching `skills` paths in `marketplace.json` — `claude plugin validate` does not check that these paths exist.
 
