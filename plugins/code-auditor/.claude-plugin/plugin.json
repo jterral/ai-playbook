@@ -1,0 +1,8 @@
+{
+  "name": "code-auditor",
+  "description": "Autonomous code audit: /audit command launches an agent applying clean-architecture, security-leak and critical-quality skills on a PR diff or the whole codebase",
+  "version": "1.0.0",
+  "author": {
+    "name": "jterral"
+  }
+}
