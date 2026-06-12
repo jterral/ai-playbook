@@ -26,17 +26,14 @@
     },
     {
       "name": "code-auditor",
-      "description": "Demanding yet constructive code review skill focused on quality, security, tests, and design tradeoffs",
-      "source": "./",
-      "strict": false,
-      "skills": [
-        "./skills/auditor"
-      ],
+      "description": "Autonomous code audit plugin: /audit command, auditor agent, clean-architecture / security-leak / critical-quality skills",
+      "source": "./plugins/code-auditor",
       "keywords": [
         "code-review",
         "audit",
-        "quality",
-        "security"
+        "architecture",
+        "security",
+        "quality"
       ]
     },
     {
