@@ -1,0 +1,8 @@
+{
+  "name": "dotnet",
+  "description": ".NET development skills: C# coding conventions and build/test verification",
+  "version": "1.0.0",
+  "author": {
+    "name": "jterral"
+  }
+}

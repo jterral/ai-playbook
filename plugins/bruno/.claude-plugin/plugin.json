@@ -1,0 +1,8 @@
+{
+  "name": "bruno",
+  "description": "Bruno API testing skills: run e2e collections interactively and generate .bru request files from ASP.NET Core endpoints",
+  "version": "1.0.0",
+  "author": {
+    "name": "jterral"
+  }
+}

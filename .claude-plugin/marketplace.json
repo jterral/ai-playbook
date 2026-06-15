@@ -11,12 +11,7 @@
     {
       "name": "bruno",
       "description": "Bruno API testing skills: run e2e collections interactively and generate .bru request files from ASP.NET Core endpoints",
-      "source": "./",
-      "strict": false,
-      "skills": [
-        "./skills/bruno-e2e",
-        "./skills/bruno-generator"
-      ],
+      "source": "./plugins/bruno",
       "keywords": [
         "bruno",
         "api",
@@ -39,12 +34,7 @@
     {
       "name": "dotnet",
       "description": ".NET development skills: C# coding conventions and build/test verification",
-      "source": "./",
-      "strict": false,
-      "skills": [
-        "./skills/csharp-conventions",
-        "./skills/dotnet-check"
-      ],
+      "source": "./plugins/dotnet",
       "keywords": [
         "dotnet",
         "csharp",
@@ -55,13 +45,7 @@
     {
       "name": "flutter",
       "description": "Flutter development skills: feature-first architecture, Apple-compliant styling, and Orient UI component usage",
-      "source": "./",
-      "strict": false,
-      "skills": [
-        "./skills/flutter-architecture",
-        "./skills/flutter-orient-ui",
-        "./skills/flutter-style"
-      ],
+      "source": "./plugins/flutter",
       "keywords": [
         "flutter",
         "dart",
@@ -72,13 +56,7 @@
     {
       "name": "git-workflow",
       "description": "Git workflow skills: branch naming, Conventional Commits, and pull request formatting",
-      "source": "./",
-      "strict": false,
-      "skills": [
-        "./skills/git-branch-naming",
-        "./skills/git-conventional-commit",
-        "./skills/git-pull-request-formatting"
-      ],
+      "source": "./plugins/git-workflow",
       "keywords": [
         "git",
         "commits",
