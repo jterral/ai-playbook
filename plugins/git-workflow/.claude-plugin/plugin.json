@@ -1,0 +1,8 @@
+{
+  "name": "git-workflow",
+  "description": "Git workflow skills: branch naming, Conventional Commits, and pull request formatting",
+  "version": "1.0.0",
+  "author": {
+    "name": "jterral"
+  }
+}

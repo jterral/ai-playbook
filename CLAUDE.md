@@ -8,30 +8,40 @@ The **Copilot Playbook** is a centralized collection of custom agents, instructi
 
 ```txt
 copilot-playbook/
-├── plugins/                        # Full plugins (commands + agents + skills)
-│   └── code-auditor/
+├── plugins/                        # All plugins (each with .claude-plugin/plugin.json + skills/)
+│   ├── bruno/
+│   │   ├── .claude-plugin/plugin.json
+│   │   └── skills/
+│   │       ├── bruno-e2e/SKILL.md
+│   │       └── bruno-generator/SKILL.md
+│   ├── code-auditor/
+│   │   ├── .claude-plugin/plugin.json
+│   │   ├── commands/audit.md       # /audit [pr|full]
+│   │   ├── agents/auditor.md       # autonomous read-only audit agent
+│   │   └── skills/
+│   │       ├── audit-architecture/SKILL.md
+│   │       ├── audit-security/SKILL.md
+│   │       └── audit-quality/SKILL.md
+│   ├── dotnet/
+│   │   ├── .claude-plugin/plugin.json
+│   │   └── skills/
+│   │       ├── csharp-conventions/SKILL.md
+│   │       └── dotnet-check/SKILL.md
+│   ├── flutter/
+│   │   ├── .claude-plugin/plugin.json
+│   │   └── skills/
+│   │       ├── flutter-architecture/SKILL.md
+│   │       ├── flutter-orient-ui/SKILL.md
+│   │       └── flutter-style/SKILL.md
+│   └── git-workflow/
 │       ├── .claude-plugin/plugin.json
-│       ├── commands/audit.md       # /audit [pr|full]
-│       ├── agents/auditor.md       # autonomous read-only audit agent
 │       └── skills/
-│           ├── audit-architecture/SKILL.md
-│           ├── audit-security/SKILL.md
-│           └── audit-quality/SKILL.md
-│
-├── skills/                         # Standalone skill definitions
-│   ├── bruno-e2e/SKILL.md
-│   ├── bruno-generator/SKILL.md
-│   ├── csharp-conventions/SKILL.md
-│   ├── dotnet-check/SKILL.md
-│   ├── flutter-architecture/SKILL.md
-│   ├── flutter-orient-ui/SKILL.md
-│   ├── flutter-style/SKILL.md
-│   ├── git-branch-naming/SKILL.md
-│   ├── git-conventional-commit/SKILL.md
-│   └── git-pull-request-formatting/SKILL.md
+│           ├── git-branch-naming/SKILL.md
+│           ├── git-conventional-commit/SKILL.md
+│           └── git-pull-request-formatting/SKILL.md
 │
 ├── .claude-plugin/
-│   └── marketplace.json            # Claude Code marketplace (5 plugins defined inline)
+│   └── marketplace.json            # Claude Code marketplace (5 plugins, all via source: ./plugins/{name})
 │
 ├── .github/
 │   └── workflows/                  # CI/CD pipelines
@@ -79,17 +89,17 @@ description: Brief description of what the skill does and when to use it
 
 ### Claude Code Marketplace Plugins
 
-Five plugins are declared in `.claude-plugin/marketplace.json`. Four are defined inline (`source: "./"` with explicit `skills` paths — no per-plugin `plugin.json` needed); `code-auditor` is a full plugin directory (`source: "./plugins/code-auditor"` with its own `plugin.json`, command, agent, and skills auto-discovered by convention):
+Five plugins are declared in `.claude-plugin/marketplace.json`. Every plugin lives under `plugins/{name}/` with its own `plugin.json` and `skills/` directory — skills are auto-discovered by convention, no explicit `skills` paths needed in `marketplace.json`:
 
-| Plugin           | Contents                                                                             |
-| ---------------- | ------------------------------------------------------------------------------------ |
-| **bruno**        | bruno-e2e, bruno-generator                                                           |
-| **code-auditor** | `/audit` command, `auditor` agent, audit-architecture, audit-security, audit-quality |
-| **dotnet**       | csharp-conventions, dotnet-check                                                     |
-| **flutter**      | flutter-architecture, flutter-orient-ui, flutter-style                               |
-| **git-workflow** | git-branch-naming, git-conventional-commit, git-pull-request-formatting              |
+| Plugin           | Source                    | Contents                                                                             |
+| ---------------- | ------------------------- | ------------------------------------------------------------------------------------ |
+| **bruno**        | `./plugins/bruno`         | bruno-e2e, bruno-generator                                                           |
+| **code-auditor** | `./plugins/code-auditor`  | `/audit` command, `auditor` agent, audit-architecture, audit-security, audit-quality |
+| **dotnet**       | `./plugins/dotnet`        | csharp-conventions, dotnet-check                                                     |
+| **flutter**      | `./plugins/flutter`       | flutter-architecture, flutter-orient-ui, flutter-style                               |
+| **git-workflow** | `./plugins/git-workflow`  | git-branch-naming, git-conventional-commit, git-pull-request-formatting              |
 
-When adding or renaming a skill directory, update the matching `skills` paths in `marketplace.json` — `claude plugin validate` does not check that these paths exist.
+When adding a new skill, add it inside the relevant plugin's `skills/` directory — no changes to `marketplace.json` needed (auto-discovery handles it).
 
 ### Conventions
 
@@ -100,10 +110,10 @@ All skill content must be in English. Non-English text is not permitted.
 #### Scope
 
 - **Commits**: Use functional `scope` (e.g., `feat(auth): add login`)
-  - File: `skills/git-conventional-commit/SKILL.md`
+  - File: `plugins/git-workflow/skills/git-conventional-commit/SKILL.md`
   - Why: Helps group related changes by domain
 - **Pull Requests**: Use functional `scope` (e.g., `feat(auth): add login`)
-  - File: `skills/git-pull-request-formatting/SKILL.md`
+  - File: `plugins/git-workflow/skills/git-pull-request-formatting/SKILL.md`
   - Why: Helps group related changes by domain
 
 Both patterns are valid; use the appropriate one based on context.
@@ -120,9 +130,10 @@ Each skill should document:
 
 ### Adding a New Skill
 
-1. Create a new directory: `skills/{skill-name}/`
-2. Add `SKILL.md` with frontmatter and content
-3. Use this template:
+1. Choose the relevant plugin under `plugins/{plugin-name}/skills/`
+2. Create a new directory: `plugins/{plugin-name}/skills/{skill-name}/`
+3. Add `SKILL.md` with frontmatter and content
+4. Use this template:
 
 ```yaml
 ---

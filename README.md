@@ -11,23 +11,38 @@ This repository provides a curated set of skills, consumable two ways:
 
 ## 🎯 Features
 
-- **[Auditor](./skills/auditor/SKILL.md)**: A demanding code review skill focused on code quality, security, testing, and architectural practices
-- **[Git Branch Naming](./skills/git-branch-naming/SKILL.md)**: Branch naming convention (`{type}/{slug}`)
-- **[Git Conventional Commits](./skills/git-conventional-commit/SKILL.md)**: Guidelines for writing standardized commit messages with mandatory scopes
-- **[Git Pull Request Formatting](./skills/git-pull-request-formatting/SKILL.md)**: Standardized pull request titles and descriptions with functional scope
-- **[Bruno e2e](./skills/bruno-e2e/SKILL.md)** / **[Bruno Generator](./skills/bruno-generator/SKILL.md)**: Run Bruno API tests and generate `.bru` request files
-- **[.NET Check](./skills/dotnet-check/SKILL.md)** / **[C# Conventions](./skills/csharp-conventions/SKILL.md)**: Build, test, and coding conventions for .NET projects
-- **Flutter skills** ([architecture](./skills/flutter-architecture/SKILL.md), [style](./skills/flutter-style/SKILL.md), [Orient UI](./skills/flutter-orient-ui/SKILL.md)): Feature-first structure, Apple-compliant styling, and Orient UI component usage
+- **[Auditor](./plugins/code-auditor/skills/)**: Demanding code review focused on code quality, security, testing, and architectural practices
+- **[Git Branch Naming](./plugins/git-workflow/skills/git-branch-naming/SKILL.md)**: Branch naming convention (`{type}/{slug}`)
+- **[Git Conventional Commits](./plugins/git-workflow/skills/git-conventional-commit/SKILL.md)**: Guidelines for writing standardized commit messages with mandatory scopes
+- **[Git Pull Request Formatting](./plugins/git-workflow/skills/git-pull-request-formatting/SKILL.md)**: Standardized pull request titles and descriptions with functional scope
+- **[Bruno e2e](./plugins/bruno/skills/bruno-e2e/SKILL.md)** / **[Bruno Generator](./plugins/bruno/skills/bruno-generator/SKILL.md)**: Run Bruno API tests and generate `.bru` request files
+- **[.NET Check](./plugins/dotnet/skills/dotnet-check/SKILL.md)** / **[C# Conventions](./plugins/dotnet/skills/csharp-conventions/SKILL.md)**: Build, test, and coding conventions for .NET projects
+- **Flutter skills** ([architecture](./plugins/flutter/skills/flutter-architecture/SKILL.md), [style](./plugins/flutter/skills/flutter-style/SKILL.md), [Orient UI](./plugins/flutter/skills/flutter-orient-ui/SKILL.md)): Feature-first structure, Apple-compliant styling, and Orient UI component usage
 
 ## 📁 Project Structure
 
 ```txt
 copilot-playbook/
-├── ...
+├── plugins/                         # All plugins (each self-contained)
+│   ├── bruno/
+│   │   ├── .claude-plugin/plugin.json
+│   │   └── skills/bruno-e2e/, bruno-generator/
+│   ├── code-auditor/
+│   │   ├── .claude-plugin/plugin.json
+│   │   ├── commands/audit.md
+│   │   ├── agents/auditor.md
+│   │   └── skills/audit-architecture/, audit-security/, audit-quality/
+│   ├── dotnet/
+│   │   ├── .claude-plugin/plugin.json
+│   │   └── skills/csharp-conventions/, dotnet-check/
+│   ├── flutter/
+│   │   ├── .claude-plugin/plugin.json
+│   │   └── skills/flutter-architecture/, flutter-orient-ui/, flutter-style/
+│   └── git-workflow/
+│       ├── .claude-plugin/plugin.json
+│       └── skills/git-branch-naming/, git-conventional-commit/, git-pull-request-formatting/
 ├── .claude-plugin/
 │   └── marketplace.json             # Claude Code marketplace (5 plugins)
-├── skills/                          # Skill definitions (APM-compatible layout)
-│   └── {skill-name}/SKILL.md
 └── ...
 ```
 
@@ -44,13 +59,13 @@ This repository is a [Claude Code plugin marketplace](https://docs.claude.com/en
 /plugin install flutter@copilot-playbook
 ```
 
-| Plugin           | Skills                                                                  |
-| ---------------- | ----------------------------------------------------------------------- |
-| **git-workflow** | git-branch-naming, git-conventional-commit, git-pull-request-formatting |
-| **code-auditor** | auditor                                                                 |
-| **bruno**        | bruno-e2e, bruno-generator                                              |
-| **dotnet**       | csharp-conventions, dotnet-check                                        |
-| **flutter**      | flutter-architecture, flutter-orient-ui, flutter-style                  |
+| Plugin           | Skills                                                                               |
+| ---------------- | ------------------------------------------------------------------------------------ |
+| **git-workflow** | git-branch-naming, git-conventional-commit, git-pull-request-formatting              |
+| **code-auditor** | `/audit` command, `auditor` agent, audit-architecture, audit-security, audit-quality |
+| **bruno**        | bruno-e2e, bruno-generator                                                           |
+| **dotnet**       | csharp-conventions, dotnet-check                                                     |
+| **flutter**      | flutter-architecture, flutter-orient-ui, flutter-style                               |
 
 Once installed, skills are namespaced by plugin (e.g. `git-workflow:git-conventional-commit`, `code-auditor:auditor`).
 
@@ -61,8 +76,8 @@ Skills follow the [APM (Agent Package Manager)](https://github.com/github/awesom
 ```yaml
 dependencies:
   apm:
-    - jterral/copilot-playbook/skills/git-conventional-commit
-    - jterral/copilot-playbook/skills/csharp-conventions
+    - jterral/copilot-playbook/plugins/git-workflow/skills/git-conventional-commit
+    - jterral/copilot-playbook/plugins/dotnet/skills/csharp-conventions
 ```
 
 Then run `apm update` to install them.
@@ -71,7 +86,7 @@ Then run `apm update` to install them.
 
 When contributing to this project:
 
-1. Follow [Conventional Commits](skills/git-conventional-commit/SKILL.md) for all commits
+1. Follow [Conventional Commits](plugins/git-workflow/skills/git-conventional-commit/SKILL.md) for all commits
 2. Follow established code quality standards
 3. Update documentation as needed
 
