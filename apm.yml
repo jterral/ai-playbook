@@ -1,4 +1,4 @@
-name: copilot-playbook
+name: ai-playbook
 version: 1.0.0
 target:
   - claude

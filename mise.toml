@@ -1,5 +1,5 @@
 [env]
-PROJECT_NAME = "copilot-playbook"
+PROJECT_NAME = "ai-playbook"
 
 [tools]
 gh = "2.93"
@@ -9,5 +9,5 @@ uv = "0.11"
 
 [task_config]
 includes = [
-  "git::ssh://git@github.com/jterral/my-mise-tasks.git//tasks/precommit?ref=v2",
+  "git::ssh://git@github.com/jterral/my-mise-tasks.git//tasks/precommit",
 ]
