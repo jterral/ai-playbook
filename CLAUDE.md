@@ -7,7 +7,7 @@ The **Copilot Playbook** is a centralized collection of custom agents, instructi
 ## Directory Structure
 
 ```txt
-copilot-playbook/
+ai-playbook/
 ├── plugins/                        # All plugins (each with .claude-plugin/plugin.json + skills/)
 │   ├── bruno/
 │   │   ├── .claude-plugin/plugin.json
