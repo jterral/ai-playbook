@@ -23,16 +23,18 @@ paths:
 public sealed class MyServiceTests : IDisposable
 {
     private readonly Mock<IDependency> _dependencyMock = new();
+    private readonly Mock<IOtherDependency> _otherDependencyMock = new();
     private readonly MyService _sut;
 
     public MyServiceTests()
     {
-        _sut = new MyService(_dependencyMock.Object);
+        _sut = new MyService(_dependencyMock.Object, _otherDependencyMock.Object);
     }
 
     public void Dispose()
     {
         _dependencyMock.VerifyNoOtherCalls();
+        _otherDependencyMock.VerifyNoOtherCalls();
     }
 }
 ```

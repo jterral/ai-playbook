@@ -5,8 +5,8 @@ description: Build a C#/.NET project and run its unit tests. Use when the user a
 
 ## Prerequisites
 
-- **.NET SDK**: .NET 6+ must be installed (`dotnet` command available)
-- **Project structure**: Must have a `.sln` or `.csproj` file in the root or working directory
+- **.NET SDK**: .NET 8+ must be installed (`dotnet` command available)
+- **Project structure**: Must have a `.sln`, `.slnx` or `.csproj` file in the root or working directory
 - **Unit tests**: UnitTests project must exist and follow naming convention `*UnitTests`
 - **Dependencies**: All NuGet dependencies must be restorable
 
