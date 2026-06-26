@@ -14,5 +14,5 @@ description: Build a C#/.NET project and run its unit tests. Use when the user a
 
 1. Run `dotnet build`
 2. If build fails, stop and report errors clearly
-3. Run `dotnet test --filter "FullyQualifiedName~UnitTests"`
+3. Run `dotnet test --filter "FullyQualifiedName!~DbTests&FullyQualifiedName!~IntegrationTests"`
 4. Report results summary
