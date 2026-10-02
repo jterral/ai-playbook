@@ -1,63 +1,93 @@
 lockfile_version: '1'
-generated_at: '2026-05-26T09:33:24.529446+00:00'
-apm_version: 0.14.0
+generated_at: '2026-10-02T19:32:59.468029+00:00'
+apm_version: 0.32.0
 dependencies:
 - repo_url: github/awesome-copilot
+  name: awesome-copilot-agent-skills
   host: github.com
-  resolved_commit: f8c986079ede8a4caa788330ec7a97776a1b7d1d
+  resolved_commit: 143a3d976b3c1603cc8932984d5e1f28501cb5fc
+  version: 1.0.0
   virtual_path: instructions/agent-skills.instructions.md
   is_virtual: true
+  package_type: apm_package
   deployed_files:
   - .claude/rules/agent-skills.md
   deployed_file_hashes:
-    .claude/rules/agent-skills.md: sha256:ab8d8a650e9d403e5d9089a60f45ffb7218c181588b960b4556a3d68e7ffdb4d
-  content_hash: sha256:0fb0e668bde07cc164c89e09aadb04cf2e914b9cdf1c82e9182d49c41fd9e200
+    .claude/rules/agent-skills.md: sha256:4b86c287c8e7c6b0ecbd66f1cd2624a801ddd00095f5820412fd7b03d7c625fb
+  content_hash: sha256:65fcf88a30510d219d52aac749ab613476348a1a4584c736fbea0a909f627804
 - repo_url: github/awesome-copilot
+  name: awesome-copilot-agents
   host: github.com
-  resolved_commit: f8c986079ede8a4caa788330ec7a97776a1b7d1d
+  resolved_commit: 143a3d976b3c1603cc8932984d5e1f28501cb5fc
+  version: 1.0.0
   virtual_path: instructions/agents.instructions.md
   is_virtual: true
+  package_type: apm_package
   deployed_files:
   - .claude/rules/agents.md
   deployed_file_hashes:
-    .claude/rules/agents.md: sha256:276a2e11ea2fbaee77d931bb22257bf1d4a86a215c73e30fd8f5161da33fa26c
-  content_hash: sha256:097d9cecd575b13da536332fce5308d8f62e2b5b7a1a1e8f93c433979202ef0c
+    .claude/rules/agents.md: sha256:ad2a9b3af38acf22c25865028916ca62ba0d8f8889433fd9b4c51ae4b7b97ffd
+  content_hash: sha256:d07c345b3767232098773e612b9e40a4771c4f9c572c24083fa3259e2ba303a6
 - repo_url: github/awesome-copilot
+  name: awesome-copilot-instructions
   host: github.com
-  resolved_commit: f8c986079ede8a4caa788330ec7a97776a1b7d1d
-  virtual_path: instructions/code-review-generic.instructions.md
-  is_virtual: true
-  deployed_files:
-  - .claude/rules/code-review-generic.md
-  deployed_file_hashes:
-    .claude/rules/code-review-generic.md: sha256:a268d8525c641834e8b1eca79f4549a3b1e0c50d4cddce9bf909c021c32b2d86
-  content_hash: sha256:afd1484a4f85894e72e2608d36a1ea4b05a1c1fac3a876564eafa0c6cce66034
-- repo_url: github/awesome-copilot
-  host: github.com
-  resolved_commit: f8c986079ede8a4caa788330ec7a97776a1b7d1d
+  resolved_commit: 143a3d976b3c1603cc8932984d5e1f28501cb5fc
+  version: 1.0.0
   virtual_path: instructions/instructions.instructions.md
   is_virtual: true
+  package_type: apm_package
   deployed_files:
   - .claude/rules/instructions.md
   deployed_file_hashes:
-    .claude/rules/instructions.md: sha256:401eaeb599da7006067ae2c3a7cbce281ea8f780d7dff341c54b86ba1a6c5e9c
-  content_hash: sha256:baa92bcb8cb2bdb992d5827fa92e424b6b92ae00ca9028b77ff2eb1745f45317
+    .claude/rules/instructions.md: sha256:12143206b81f13aef4efb2e26f6a65483211c63407fcafc289775866ee6879cc
+  content_hash: sha256:c190999f713a13bc01b918acf454e7546a9dc9fe254e0f9d6705df3ff698c917
 - repo_url: github/awesome-copilot
+  name: awesome-copilot-prompt
   host: github.com
-  resolved_commit: f8c986079ede8a4caa788330ec7a97776a1b7d1d
+  resolved_commit: 143a3d976b3c1603cc8932984d5e1f28501cb5fc
+  version: 1.0.0
   virtual_path: instructions/prompt.instructions.md
   is_virtual: true
+  package_type: apm_package
   deployed_files:
   - .claude/rules/prompt.md
   deployed_file_hashes:
-    .claude/rules/prompt.md: sha256:ee1cc7ba5bc8a6a0cfa2ec64e8a98d5151ae34d3c35e1fc37bc38b566b9e88a7
-  content_hash: sha256:41d3a1666bfe3eb844121d5514fd8f12ec0335410d8f7be07f9f5a7fa4858ccb
-- repo_url: multica-ai/andrej-karpathy-skills
-  host: github.com
-  resolved_commit: 2c606141936f1eeef17fa3043a72095b4765b9c2
-  virtual_path: skills/karpathy-guidelines
-  is_virtual: true
-  package_type: claude_skill
-  deployed_files:
-  - .claude/skills/karpathy-guidelines
-  content_hash: sha256:41e8ca055bbde13d240776a14a076a59614057200340c243130a76ba4e64cac8
+    .claude/rules/prompt.md: sha256:3b692cc001be6fc0d88e3d8d0e7424dcf7ad36757cc742f3c881b4db3e104be7
+  content_hash: sha256:9aa049787bdcdcb6e7cc5f02daeb7c9662c6bdcec515dc9e5ff708b8c4cceaf6
+deployments:
+- kind: project-relative
+  target: claude
+  value: .claude/rules/agent-skills.md
+  runtime: null
+  scope: project
+  owners:
+  - github/awesome-copilot/instructions/agent-skills.instructions.md
+  active_owner: github/awesome-copilot/instructions/agent-skills.instructions.md
+  content_hash: sha256:4b86c287c8e7c6b0ecbd66f1cd2624a801ddd00095f5820412fd7b03d7c625fb
+- kind: project-relative
+  target: claude
+  value: .claude/rules/agents.md
+  runtime: null
+  scope: project
+  owners:
+  - github/awesome-copilot/instructions/agents.instructions.md
+  active_owner: github/awesome-copilot/instructions/agents.instructions.md
+  content_hash: sha256:ad2a9b3af38acf22c25865028916ca62ba0d8f8889433fd9b4c51ae4b7b97ffd
+- kind: project-relative
+  target: claude
+  value: .claude/rules/instructions.md
+  runtime: null
+  scope: project
+  owners:
+  - github/awesome-copilot/instructions/instructions.instructions.md
+  active_owner: github/awesome-copilot/instructions/instructions.instructions.md
+  content_hash: sha256:12143206b81f13aef4efb2e26f6a65483211c63407fcafc289775866ee6879cc
+- kind: project-relative
+  target: claude
+  value: .claude/rules/prompt.md
+  runtime: null
+  scope: project
+  owners:
+  - github/awesome-copilot/instructions/prompt.instructions.md
+  active_owner: github/awesome-copilot/instructions/prompt.instructions.md
+  content_hash: sha256:3b692cc001be6fc0d88e3d8d0e7424dcf7ad36757cc742f3c881b4db3e104be7
