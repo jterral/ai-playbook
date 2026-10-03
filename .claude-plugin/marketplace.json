@@ -4,8 +4,7 @@
     "name": "jterral"
   },
   "metadata": {
-    "description": "Personal marketplace of skills for code review, git workflows, Bruno API testing, .NET and Flutter development",
-    "version": "1.0.0"
+    "description": "Personal marketplace of skills for code review, git workflows, Bruno API testing, .NET and Flutter development"
   },
   "plugins": [
     {
@@ -33,13 +32,12 @@
     },
     {
       "name": "dotnet",
-      "description": ".NET development skills: C# coding conventions and build/test verification",
+      "description": ".NET development rules: C# coding conventions applied automatically to .cs files",
       "source": "./plugins/dotnet",
       "keywords": [
         "dotnet",
         "csharp",
-        "conventions",
-        "testing"
+        "conventions"
       ]
     },
     {

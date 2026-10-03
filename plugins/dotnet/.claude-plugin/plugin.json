@@ -1,7 +1,6 @@
 {
   "name": "dotnet",
-  "description": ".NET development skills: C# coding conventions and build/test verification",
-  "version": "1.0.0",
+  "description": ".NET development rules: C# coding conventions applied automatically to .cs files",
   "author": {
     "name": "jterral"
   }

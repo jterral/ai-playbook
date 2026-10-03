@@ -1,8 +1,8 @@
-# Copilot Playbook — Claude Code Guide
+# AI Playbook — Claude Code Guide
 
 ## Project Overview
 
-The **Copilot Playbook** is a centralized collection of custom agents, instructions, and skills for GitHub Copilot. It provides standardized guidance for code review, workflow automation, development practices, and quality standards, designed to be reusable across multiple C# projects.
+The **AI Playbook** is a Claude Code plugin marketplace: a centralized collection of skills, rules, commands, and agents. It provides standardized guidance for code review, workflow automation, development practices, and quality standards, designed to be reusable across multiple projects (.NET, Flutter, ...).
 
 ## Directory Structure
 
@@ -24,9 +24,7 @@ ai-playbook/
 │   │       └── audit-quality/SKILL.md
 │   ├── dotnet/
 │   │   ├── .claude-plugin/plugin.json
-│   │   └── skills/
-│   │       ├── csharp-conventions/SKILL.md
-│   │       └── dotnet-check/SKILL.md
+│   │   └── rules/csharp.md         # path-scoped to **/*.cs
 │   ├── flutter/
 │   │   ├── .claude-plugin/plugin.json
 │   │   └── skills/
@@ -78,8 +76,6 @@ description: Brief description of what the skill does and when to use it
 | **audit-quality**               | Demanding code quality audit                | Quality Review  |
 | **bruno-e2e**                   | Run Bruno API tests interactively           | Testing         |
 | **bruno-generator**             | Generate Bruno .bru test files              | Code Generation |
-| **csharp-conventions**          | C# and .NET coding conventions (auto)       | Conventions     |
-| **dotnet-check**                | Build C# project & run unit tests           | Build/Test      |
 | **flutter-architecture**        | Flutter feature-first architecture (auto)   | Conventions     |
 | **flutter-orient-ui**           | Orient UI component usage in Flutter (auto) | Conventions     |
 | **flutter-style**               | Flutter styling for Apple compliance (auto) | Conventions     |
@@ -95,7 +91,7 @@ Five plugins are declared in `.claude-plugin/marketplace.json`. Every plugin liv
 | ---------------- | ------------------------- | ------------------------------------------------------------------------------------ |
 | **bruno**        | `./plugins/bruno`         | bruno-e2e, bruno-generator                                                           |
 | **code-auditor** | `./plugins/code-auditor`  | `/audit` command, `auditor` agent, audit-architecture, audit-security, audit-quality |
-| **dotnet**       | `./plugins/dotnet`        | csharp-conventions, dotnet-check                                                     |
+| **dotnet**       | `./plugins/dotnet`        | `rules/csharp.md` (C# conventions, scoped to `**/*.cs`)                              |
 | **flutter**      | `./plugins/flutter`       | flutter-architecture, flutter-orient-ui, flutter-style                               |
 | **git-workflow** | `./plugins/git-workflow`  | git-branch-naming, git-conventional-commit, git-pull-request-formatting              |
 
@@ -161,7 +157,7 @@ Brief explanation of what the skill does and when to use it.
 
 ### Updating Dependencies
 
-Copilot Playbook uses APM (Agent Package Manager) to pull base instructions from `github/awesome-copilot`:
+AI Playbook uses APM (Agent Package Manager) to pull base instructions from `github/awesome-copilot`:
 
 ```bash
 apm update  # Update dependencies from apm.yml
@@ -243,14 +239,8 @@ This playbook undergoes regular reviews to:
 - Verify file is at `skills/{name}/SKILL.md`
 - Ensure the `description` states when to use the skill (it drives automatic activation)
 
-**Duplicate files between `skills/` and `instructions/`?**
-
-- Skills directory is the source of truth
-- Instructions directory is for reference only
-- Use skills/ when invoking capabilities
-
 ## Related Resources
 
 - [Conventional Commits](https://www.conventionalcommits.org/)
-- [GitHub Copilot Documentation](https://docs.github.com/en/copilot)
+- [Claude Code Plugins Documentation](https://docs.claude.com/en/docs/claude-code/plugins)
 - [APM (Agent Package Manager)](https://github.com/github/awesome-copilot)

@@ -6,7 +6,5 @@ dependencies:
   apm:
     - github/awesome-copilot/instructions/agent-skills.instructions.md
     - github/awesome-copilot/instructions/agents.instructions.md
-    - github/awesome-copilot/instructions/code-review-generic.instructions.md
     - github/awesome-copilot/instructions/instructions.instructions.md
     - github/awesome-copilot/instructions/prompt.instructions.md
-    - multica-ai/andrej-karpathy-skills/skills/karpathy-guidelines

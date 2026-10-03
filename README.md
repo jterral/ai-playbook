@@ -1,6 +1,6 @@
-# Copilot Playbook
+# AI Playbook
 
-A comprehensive collection of reusable agent skills for GitHub Copilot and Claude Code, including development best practices, quality standards, and automation tooling.
+A Claude Code plugin marketplace of reusable skills, rules, commands, and agents: git workflow, code auditing, API testing, and .NET and Flutter conventions.
 
 ## 📋 Overview
 
@@ -15,14 +15,13 @@ This repository provides a curated set of skills, consumable two ways:
   - [Bruno e2e](./plugins/bruno/skills/bruno-e2e/SKILL.md): Run Bruno API tests
   - [Bruno Generator](./plugins/bruno/skills/bruno-generator/SKILL.md): Generate `.bru` request files
 - **Code Auditor**
-  - [Code Auditor](./plugins/code-auditor/skills/)**: Demanding code review focused on code quality, security, testing, and architectural practices
+  - [Code Auditor](./plugins/code-auditor/): `/audit` command and `auditor` agent applying the architecture, security and quality audit skills
 - **Git Workflow**
   - [Branch Naming](./plugins/git-workflow/skills/git-branch-naming/SKILL.md): Standardized Git practices for branch naming
   - [Conventional Commits](./plugins/git-workflow/skills/git-conventional-commit/SKILL.md): Standardized Git practices for commit messages
   - [Pull Request Formatting](./plugins/git-workflow/skills/git-pull-request-formatting/SKILL.md): Standardized Git practices for pull request formatting
 - **.NET**
-  - [.NET Check](./plugins/dotnet/skills/dotnet-check/SKILL.md): Validate .NET project structure, dependencies, and build configuration
-  - [C# Conventions](./plugins/dotnet/skills/csharp-conventions/SKILL.md): Enforce C# coding conventions and best practices
+  - [C# Rules](./plugins/dotnet/rules/csharp.md): C# coding conventions, applied automatically to `**/*.cs` files
 - **Flutter**
   - [Architecture](./plugins/flutter/skills/flutter-architecture/SKILL.md): Enforce Flutter architecture best practices
   - [Style](./plugins/flutter/skills/flutter-style/SKILL.md): Enforce Flutter styling conventions
@@ -43,7 +42,7 @@ ai-playbook/
 │   │   └── skills/audit-architecture/, audit-security/, audit-quality/
 │   ├── dotnet/
 │   │   ├── .claude-plugin/plugin.json
-│   │   └── skills/csharp-conventions/, dotnet-check/
+│   │   └── rules/csharp.md
 │   ├── flutter/
 │   │   ├── .claude-plugin/plugin.json
 │   │   └── skills/flutter-architecture/, flutter-orient-ui/, flutter-style/
@@ -68,11 +67,11 @@ This repository is a [Claude Code plugin marketplace](https://docs.claude.com/en
 /plugin install flutter@ai-playbook
 ```
 
-| Plugin           | Skills                                                                               |
+| Plugin           | Contents                                                                             |
 | ---------------- | ------------------------------------------------------------------------------------ |
 | **bruno**        | bruno-e2e, bruno-generator                                                           |
 | **code-auditor** | `/audit` command, `auditor` agent, audit-architecture, audit-security, audit-quality |
-| **dotnet**       | csharp-conventions, dotnet-check                                                     |
+| **dotnet**       | `rules/csharp.md` (C# conventions, scoped to `**/*.cs`)                              |
 | **flutter**      | flutter-architecture, flutter-orient-ui, flutter-style                               |
 | **git-workflow** | git-branch-naming, git-conventional-commit, git-pull-request-formatting              |
 
@@ -105,12 +104,8 @@ See [LICENSE](LICENSE) file for full details.
 
 ## 🔗 Resources
 
-- [GitHub Copilot Documentation](https://docs.github.com/en/copilot)
+- [Claude Code Plugins Documentation](https://docs.claude.com/en/docs/claude-code/plugins)
 - [Conventional Commits](https://www.conventionalcommits.org/)
 - [Semantic Versioning](https://semver.org/)
 - [mise Documentation](https://mise.jdx.dev/)
 - [GitVersion Documentation](https://gitversion.net/)
-
----
-
-**Last Updated:** June 2026
