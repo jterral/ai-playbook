@@ -32,7 +32,7 @@
     },
     {
       "name": "dotnet",
-      "description": ".NET development rules: C# coding conventions applied automatically to .cs files",
+      "description": ".NET development skills: C# coding conventions",
       "source": "./plugins/dotnet",
       "keywords": [
         "dotnet",

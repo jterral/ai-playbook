@@ -24,7 +24,7 @@ ai-playbook/
 │   │       └── audit-quality/SKILL.md
 │   ├── dotnet/
 │   │   ├── .claude-plugin/plugin.json
-│   │   └── rules/csharp.md         # path-scoped to **/*.cs
+│   │   └── skills/csharp-conventions/SKILL.md
 │   ├── flutter/
 │   │   ├── .claude-plugin/plugin.json
 │   │   └── skills/
@@ -76,6 +76,7 @@ description: Brief description of what the skill does and when to use it
 | **audit-quality**               | Demanding code quality audit                | Quality Review  |
 | **bruno-e2e**                   | Run Bruno API tests interactively           | Testing         |
 | **bruno-generator**             | Generate Bruno .bru test files              | Code Generation |
+| **csharp-conventions**          | C# and .NET coding conventions (auto)       | Conventions     |
 | **flutter-architecture**        | Flutter feature-first architecture (auto)   | Conventions     |
 | **flutter-orient-ui**           | Orient UI component usage in Flutter (auto) | Conventions     |
 | **flutter-style**               | Flutter styling for Apple compliance (auto) | Conventions     |
@@ -91,7 +92,7 @@ Five plugins are declared in `.claude-plugin/marketplace.json`. Every plugin liv
 | ---------------- | ------------------------- | ------------------------------------------------------------------------------------ |
 | **bruno**        | `./plugins/bruno`         | bruno-e2e, bruno-generator                                                           |
 | **code-auditor** | `./plugins/code-auditor`  | `/audit` command, `auditor` agent, audit-architecture, audit-security, audit-quality |
-| **dotnet**       | `./plugins/dotnet`        | `rules/csharp.md` (C# conventions, scoped to `**/*.cs`)                              |
+| **dotnet**       | `./plugins/dotnet`        | csharp-conventions                                                                   |
 | **flutter**      | `./plugins/flutter`       | flutter-architecture, flutter-orient-ui, flutter-style                               |
 | **git-workflow** | `./plugins/git-workflow`  | git-branch-naming, git-conventional-commit, git-pull-request-formatting              |
 

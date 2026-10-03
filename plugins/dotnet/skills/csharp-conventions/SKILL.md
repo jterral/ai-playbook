@@ -1,6 +1,6 @@
 ---
-paths:
-  - "**/*.cs"
+name: csharp-conventions
+description: C# and .NET coding conventions. Use automatically when creating, modifying, or reviewing C# files (.cs), classes, tests, or ASP.NET Core endpoints.
 ---
 
 # C# Development
