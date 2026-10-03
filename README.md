@@ -1,6 +1,6 @@
-# Copilot Playbook
+# AI Playbook
 
-A comprehensive collection of reusable agent skills for GitHub Copilot and Claude Code, including development best practices, quality standards, and automation tooling.
+A Claude Code plugin marketplace of reusable skills, rules, commands, and agents: git workflow, code auditing, API testing, and .NET and Flutter conventions.
 
 ## 📋 Overview
 
@@ -104,12 +104,8 @@ See [LICENSE](LICENSE) file for full details.
 
 ## 🔗 Resources
 
-- [GitHub Copilot Documentation](https://docs.github.com/en/copilot)
+- [Claude Code Plugins Documentation](https://docs.claude.com/en/docs/claude-code/plugins)
 - [Conventional Commits](https://www.conventionalcommits.org/)
 - [Semantic Versioning](https://semver.org/)
 - [mise Documentation](https://mise.jdx.dev/)
 - [GitVersion Documentation](https://gitversion.net/)
-
----
-
-**Last Updated:** June 2026

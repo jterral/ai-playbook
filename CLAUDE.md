@@ -1,8 +1,8 @@
-# Copilot Playbook — Claude Code Guide
+# AI Playbook — Claude Code Guide
 
 ## Project Overview
 
-The **Copilot Playbook** is a centralized collection of custom agents, instructions, and skills for GitHub Copilot. It provides standardized guidance for code review, workflow automation, development practices, and quality standards, designed to be reusable across multiple C# projects.
+The **AI Playbook** is a Claude Code plugin marketplace: a centralized collection of skills, rules, commands, and agents. It provides standardized guidance for code review, workflow automation, development practices, and quality standards, designed to be reusable across multiple projects (.NET, Flutter, ...).
 
 ## Directory Structure
 
@@ -157,7 +157,7 @@ Brief explanation of what the skill does and when to use it.
 
 ### Updating Dependencies
 
-Copilot Playbook uses APM (Agent Package Manager) to pull base instructions from `github/awesome-copilot`:
+AI Playbook uses APM (Agent Package Manager) to pull base instructions from `github/awesome-copilot`:
 
 ```bash
 apm update  # Update dependencies from apm.yml
@@ -239,14 +239,8 @@ This playbook undergoes regular reviews to:
 - Verify file is at `skills/{name}/SKILL.md`
 - Ensure the `description` states when to use the skill (it drives automatic activation)
 
-**Duplicate files between `skills/` and `instructions/`?**
-
-- Skills directory is the source of truth
-- Instructions directory is for reference only
-- Use skills/ when invoking capabilities
-
 ## Related Resources
 
 - [Conventional Commits](https://www.conventionalcommits.org/)
-- [GitHub Copilot Documentation](https://docs.github.com/en/copilot)
+- [Claude Code Plugins Documentation](https://docs.claude.com/en/docs/claude-code/plugins)
 - [APM (Agent Package Manager)](https://github.com/github/awesome-copilot)
