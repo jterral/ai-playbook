@@ -21,7 +21,7 @@ This repository provides a curated set of skills, consumable two ways:
   - [Conventional Commits](./plugins/git-workflow/skills/git-conventional-commit/SKILL.md): Standardized Git practices for commit messages
   - [Pull Request Formatting](./plugins/git-workflow/skills/git-pull-request-formatting/SKILL.md): Standardized Git practices for pull request formatting
 - **.NET**
-  - [C# Rules](./plugins/dotnet/rules/csharp.md): C# coding conventions, applied automatically to `**/*.cs` files
+  - [C# Conventions](./plugins/dotnet/skills/csharp-conventions/SKILL.md): C# and .NET coding conventions
 - **Flutter**
   - [Architecture](./plugins/flutter/skills/flutter-architecture/SKILL.md): Enforce Flutter architecture best practices
   - [Style](./plugins/flutter/skills/flutter-style/SKILL.md): Enforce Flutter styling conventions
@@ -42,7 +42,7 @@ ai-playbook/
 │   │   └── skills/audit-architecture/, audit-security/, audit-quality/
 │   ├── dotnet/
 │   │   ├── .claude-plugin/plugin.json
-│   │   └── rules/csharp.md
+│   │   └── skills/csharp-conventions/
 │   ├── flutter/
 │   │   ├── .claude-plugin/plugin.json
 │   │   └── skills/flutter-architecture/, flutter-orient-ui/, flutter-style/
@@ -71,7 +71,7 @@ This repository is a [Claude Code plugin marketplace](https://docs.claude.com/en
 | ---------------- | ------------------------------------------------------------------------------------ |
 | **bruno**        | bruno-e2e, bruno-generator                                                           |
 | **code-auditor** | `/audit` command, `auditor` agent, audit-architecture, audit-security, audit-quality |
-| **dotnet**       | `rules/csharp.md` (C# conventions, scoped to `**/*.cs`)                              |
+| **dotnet**       | csharp-conventions                                                                   |
 | **flutter**      | flutter-architecture, flutter-orient-ui, flutter-style                               |
 | **git-workflow** | git-branch-naming, git-conventional-commit, git-pull-request-formatting              |
 
