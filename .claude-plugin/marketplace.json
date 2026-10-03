@@ -33,13 +33,12 @@
     },
     {
       "name": "dotnet",
-      "description": ".NET development skills: C# coding conventions and build/test verification",
+      "description": ".NET development rules: C# coding conventions applied automatically to .cs files",
       "source": "./plugins/dotnet",
       "keywords": [
         "dotnet",
         "csharp",
-        "conventions",
-        "testing"
+        "conventions"
       ]
     },
     {
