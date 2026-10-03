@@ -1,7 +1,6 @@
 {
   "name": "dotnet",
   "description": ".NET development rules: C# coding conventions applied automatically to .cs files",
-  "version": "1.0.0",
   "author": {
     "name": "jterral"
   }
